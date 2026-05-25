@@ -1,0 +1,88 @@
+/* Tổng thể trang giới thiệu */
+.about-container {
+    overflow-x: hidden;
+    line-height: 1.6;
+    background-color: #f0fff4; /* Nền xanh lá cực nhẹ toàn trang */
+}
+
+/* Phần 2: Giới thiệu về shop */
+.shop-intro h2 {
+    color: #2d6a4f;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.shop-intro h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #52b788; /* Màu xanh bạc hà đậm */
+}
+
+/* Phần 3: Sứ mệnh / Giá trị - Đổi sang màu xanh bạc hà (Mint Green) */
+.mission-values {
+    background-color: #b7e4c7 !important; /* Màu xanh lá bạc hà */
+    color: #1b4332 !important; /* Chữ xanh đậm để dễ đọc trên nền sáng */
+    border: none;
+}
+
+.mission-values h3 {
+    color: #dee466 !important;
+    font-weight: bold;
+}
+
+.mission-values .badge {
+    background-color: #ffffff !important;
+    color: #2d6a4f !important;
+    border: 1px solid #95d5b2;
+}
+
+/* Phần 4: Vì sao chọn chúng tôi */
+.reasons-card {
+    border-radius: 15px !important;
+    border: 1px solid #d8f3dc;
+    background-color: #ffffff;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    user-select: none; /* Tránh bôi đen chữ khi nhấn nhanh */
+}
+
+/* Bỏ hoàn toàn hiệu ứng hover phóng to (transform), chỉ giữ đổ bóng cực nhẹ */
+.reasons-card:hover {
+    transform: none !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+}
+
+/* HIỆU ỨNG KHI CHẠM (CLICK/ACTIVE) */
+.reasons-card:active {
+    background-color: #95d5b2 !important; /* Đổi màu nền sang xanh bạc hà đậm hơn khi nhấn */
+    color: white !important;
+}
+
+/* Đảm bảo chữ trắng khi thẻ được nhấn */
+.reasons-card:active h5, 
+.reasons-card:active p,
+.reasons-card:active .display-4 {
+    color: white !important;
+}
+
+/* Border ngăn cách cho desktop */
+@media (min-width: 768px) {
+    .border-end-mint {
+        border-right: 1px solid rgba(27, 67, 50, 0.2) !important;
+    }
+}
+
+/* Điều chỉnh cho mobile */
+@media (max-width: 767.98px) {
+    .mission-values .col-md-6:first-child {
+        border-right: none !important;
+        border-bottom: 1px solid rgba(27, 67, 50, 0.1);
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}

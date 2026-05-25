@@ -1,0 +1,222 @@
+/* Container tổng của trang Tin Tức */
+.news-page {
+    background-color: #ffffff;
+    padding: 60px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Tiêu đề chung cho mỗi phần */
+.news-title {
+    text-align: center;
+    color: #1a472a; /* Màu xanh đậm thương hiệu */
+    font-weight: 800;
+    font-size: 28px;
+    margin-bottom: 50px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Đường gạch chân dưới tiêu đề (giống image_c55878.png) */
+.news-title::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #27ae60; /* Màu xanh lá tươi */
+    border-radius: 2px;
+}
+
+/* --- PHẦN 1: TIN TỨC MỚI NHẤT --- */
+.news-section {
+    margin-bottom: 100px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px; /* Khoảng cách giúp các card không bị dính nhau */
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(39, 174, 96, 0.1);
+}
+
+.news-tag {
+    display: inline-block;
+    color: #27ae60;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.news-card-title {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.news-card-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn-readmore {
+    background: none;
+    border: none;
+    color: #27ae60;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.btn-readmore:hover {
+    color: #1a472a;
+}
+
+/* --- PHẦN 2: LOẠI SẢN PHẨM ƯU ĐÃI --- */
+.promo-categories-section {
+    margin-bottom: 100px;
+}
+
+.promo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.promo-item {
+    border: 2px solid #27ae60;
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 180px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.promo-item:hover {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.promo-percent {
+    display: block;
+    color: inherit;
+    font-weight: 800;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.promo-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: inherit;
+}
+
+.promo-item:hover .promo-percent,
+.promo-item:hover .promo-name {
+    color: #fff;
+}
+
+/* --- PHẦN 3: SẮP KHUYẾN MÃI --- */
+.upcoming-section {
+    margin-bottom: 60px;
+}
+
+.upcoming-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.upcoming-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 25px;
+    gap: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.date-badge {
+    min-width: 110px;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.green-badge { background-color: #27ae60; }
+.orange-badge { background-color: #f1c40f; }
+
+.main-date {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.sub-date {
+    font-size: 11px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.upcoming-content {
+    flex: 1;
+}
+
+.upcoming-title {
+    font-size: 17px;
+    color: #222;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.upcoming-detail {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .upcoming-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .upcoming-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .news-title {
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,129 @@
+/* Khung nền điều hướng - Đổ bóng tách biệt nội dung bên dưới */
+.navigation {
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Giúp menu không bị lẫn vào phần Banner/News */
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Đẩy menu sang trái, hotline sang phải */
+    align-items: center;
+    padding: 0 20px;
+    height: 70px; /* Chiều cao cố định để menu thoáng đãng */
+}
+
+/* Danh sách Menu - Sử dụng Flexbox để chống dính chữ */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px; /* Tạo khoảng cách an toàn giữa các mục */
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Định dạng các đường dẫn Link */
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px; /* Tạo vùng đệm xung quanh chữ */
+    text-decoration: none;
+    color: #444; /* Màu chữ mặc định */
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    white-space: nowrap; /* Ngăn chữ xuống dòng gây vỡ khung */
+    letter-spacing: 0.3px;
+}
+
+/* Hiệu ứng ĐỔI MÀU khi Hover hoặc trang đang Active */
+.nav-link:hover, 
+.nav-link.active {
+    color: #27ae60 !important; /* Xanh lá tươi đúng thương hiệu */
+}
+
+/* Hiệu ứng nhấn nhẹ (Click) */
+.nav-link:active {
+    transform: scale(0.95); /* Cảm giác nhấn nút */
+}
+
+/* Khu vực Hotline bên phải (Khớp với image_fcd944.png) */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-hotline-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f9f9f9;
+    padding: 8px 18px;
+    border-radius: 40px;
+    border: 1px solid #f0f0f0;
+}
+
+.nav-hotline-badge i {
+    color: #27ae60;
+    font-size: 16px;
+}
+
+.hotline-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.hotline-label {
+    font-size: 9px;
+    color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hotline-number {
+    font-size: 14px;
+    font-weight: 800;
+    color: #27ae60;
+}
+
+/* Tối ưu cho Mobile - Cho phép cuộn ngang menu */
+@media (max-width: 992px) {
+    .nav-right {
+        display: none; /* Ẩn hotline trên màn hình nhỏ */
+    }
+    .nav-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        width: 100%;
+        overflow-x: auto; /* Vuốt ngang menu trên mobile */
+        scrollbar-width: none; 
+        gap: 5px;
+    }
+    .nav-menu::-webkit-scrollbar {
+        display: none;
+    }
+    .nav-link {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+nav{
+    background-color: #d7d7d7;
+}

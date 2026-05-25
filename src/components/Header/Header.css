@@ -1,0 +1,231 @@
+/* --- Header Base Styles --- */
+.phuclong-header {
+  background-color: rgb(209, 255, 219);
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-top-bar {
+  background-color: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-top-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  min-height: 80px;
+}
+
+/* --- Delivery Info Section (Bên trái) --- */
+.header-delivery-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.delivery-text {
+  font-weight: 700;
+  color: #c8102e; /* Màu đỏ thương hiệu */
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.delivery-icon {
+  color: #c8102e;
+  font-size: 14px;
+}
+
+.delivery-phone {
+  font-weight: 800;
+  color: #c8102e;
+  font-size: 16px;
+}
+
+.delivery-scooter {
+  margin-left: 5px;
+  color: #28a745;
+  font-size: 24px;
+  /* Hiệu ứng xe chạy nhẹ */
+  animation: scooterMove 2s infinite ease-in-out;
+}
+
+@keyframes scooterMove {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+/* --- Logo Section (Ở giữa) --- */
+.header-logo-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.phuclong-logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo-image {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.header-logo-image:hover {
+  transform: scale(1.1);
+}
+
+/* --- User Actions & Cart (Bên phải) --- */
+.header-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.login-link {
+  background: none;
+  border: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.login-link:hover {
+  color: #1a472a;
+}
+
+/* Lang Switcher */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #666;
+}
+
+.lang-active {
+  color: #1a472a;
+  cursor: pointer;
+}
+
+.lang-separator {
+  margin: 0 5px;
+  color: #ddd;
+}
+
+.lang-option {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.lang-option:hover {
+  color: #333;
+}
+
+/* Cart Button */
+.cart-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  border: 2px solid #1a472a;
+  border-radius: 25px; /* Bo tròn kiểu viên thuốc */
+  background-color: white;
+  color: #1a472a;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cart-button:hover {
+  background-color: #1a472a;
+  color: white;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  font-size: 18px;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  min-width: 18px;
+  height: 18px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  padding: 2px;
+  border: 2px solid white;
+}
+
+/* --- Responsive Media Queries --- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .delivery-text, .cart-text {
+    display: none; /* Ẩn bớt chữ để tránh chật chội */
+  }
+  
+  .header-logo-image {
+    height: 60px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header-top-content {
+    flex-direction: row; /* Vẫn giữ hàng ngang nhưng căn chỉnh lại */
+    min-height: 60px;
+    padding: 10px 0;
+  }
+
+  .header-delivery-info {
+    display: none; /* Ẩn thông tin giao hàng trên mobile để nhường chỗ cho logo */
+  }
+
+  .header-logo-container {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    flex: 1;
+  }
+
+  .header-user-actions {
+    gap: 10px;
+  }
+
+  .login-link i {
+    font-size: 20px;
+  }
+  
+  .cart-button {
+    padding: 8px 12px;
+  }
+}

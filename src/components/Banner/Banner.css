@@ -1,0 +1,143 @@
+/* Layout tổng thể */
+.banner-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.banner-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  background: #fff;
+  border-radius: 20px;
+  padding: 60px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Shadow nhẹ nhàng hơn */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Badge khuyến mãi */
+.banner-badge {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Tiêu đề */
+.banner-title {
+  font-size: 48px;
+  font-weight: 800; /* Đậm hơn để nổi bật */
+  color: #0f172a;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.banner-title span {
+  color: #d35400; /* Màu cam đặc trưng của trái cây */
+}
+
+/* Mô tả */
+.banner-description {
+  font-size: 18px;
+  color: #64748b;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+/* Khu vực nút bấm */
+.banner-actions {
+  display: flex;
+  gap: 15px;
+}
+
+/* Tái sử dụng style nút (Giả định bạn có class chung từ Cart.css) */
+.banner-btn, .banner-btn-outline {
+  width: auto !important;
+  margin-top: 0 !important;
+  padding: 14px 35px !important;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.banner-btn {
+  background: #27ae60; /* Màu xanh lá tươi mới */
+  color: white;
+}
+
+.banner-btn:hover {
+  background: #219150;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+}
+
+.banner-btn-outline {
+  background: transparent;
+  border: 2px solid #27ae60 !important;
+  color: #27ae60;
+}
+
+.banner-btn-outline:hover {
+  background: #27ae60;
+  color: white;
+}
+
+/* Hình ảnh */
+.banner-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-image img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  border-radius: 12px;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1); /* Hiệu ứng mượt hơn */
+}
+
+.banner-content:hover .banner-image img {
+  transform: scale(1.08) rotate(2deg); /* Phóng to và xoay nhẹ khi hover */
+}
+
+/* Mobile Responsive - Breakpoint 968px */
+@media (max-width: 968px) {
+  .banner-content {
+    grid-template-columns: 1fr;
+    padding: 40px 25px;
+    text-align: center;
+  }
+
+  .banner-actions {
+    justify-content: center;
+  }
+
+  .banner-title {
+    font-size: 36px;
+  }
+
+  .banner-description {
+    font-size: 16px;
+  }
+
+  .banner-image {
+    order: -1; /* Đưa ảnh lên trên văn bản ở mobile */
+    margin-bottom: 20px;
+  }
+
+  .banner-image img {
+    max-width: 300px;
+  }
+}
